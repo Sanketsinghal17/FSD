@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sanket Singhal | Professional Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&display=swap" rel="stylesheet">
+    <!-- Typed.js for dynamic typing effect -->
+    <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0a0a0a;
+            color: #e2e8f0;
+        }
+        .gradient-text {
+            background: linear-gradient(to right, #38bdf8, #818cf8);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .glass-effect {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .scroll-animation {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        .scroll-animation.animate {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        /* Style for the Typed.js cursor */
+        .typed-cursor {
+            color: #818cf8;
+            font-weight: 300;
+        }
+    </style>
+</head>
+<body class="overflow-x-hidden">
+
+    <!-- Header & Navigation -->
+    <header id="header" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#home" class="text-2xl font-bold gradient-text">Sanket Singhal</a>
+            <div class="hidden md:flex space-x-8 items-center">
+                <a href="#about" class="text-slate-300 hover:text-sky-400 transition duration-300">About</a>
+                <a href="#education" class="text-slate-300 hover:text-sky-400 transition duration-300">Education</a>
+                <a href="#projects" class="text-slate-300 hover:text-sky-400 transition duration-300">Projects</a>
+                <a href="#skills" class="text-slate-300 hover:text-sky-400 transition duration-300">Skills</a>
+                <a href="#contact" class="bg-sky-500 hover:bg-sky-600 text-white font-medium py-2 px-4 rounded-lg transition duration-300">Contact</a>
+            </div>
+            <!-- Mobile Menu Button -->
+            <button id="mobile-menu-button" class="md:hidden text-slate-300 focus:outline-none">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+                </svg>
+            </button>
+        </nav>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-slate-900/80 backdrop-blur-sm">
+            <a href="#about" class="block py-3 px-6 text-slate-300 hover:bg-slate-800">About</a>
+            <a href="#education" class="block py-3 px-6 text-slate-300 hover:bg-slate-800">Education</a>
+            <a href="#projects" class="block py-3 px-6 text-slate-300 hover:bg-slate-800">Projects</a>
+            <a href="#skills" class="block py-3 px-6 text-slate-300 hover:bg-slate-800">Skills</a>
+            <a href="#contact" class="block py-3 px-6 text-slate-300 hover:bg-slate-800">Contact</a>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-6">
+        <!-- Hero Section -->
+        <section id="home" class="min-h-screen flex items-center justify-center text-center relative overflow-hidden">
+            <!-- Background Glow -->
+            <div class="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-sky-500 rounded-full filter blur-3xl opacity-20 animate-pulse"></div>
+            <div class="absolute top-2/3 left-1/4 -translate-x-1/2 -translate-y-1/2 w-80 h-80 bg-indigo-500 rounded-full filter blur-3xl opacity-10 animate-pulse animation-delay-4000"></div>
+
+            <div class="z-10">
+                <h1 class="text-5xl md:text-7xl font-extrabold mb-4 leading-tight">
+                    <span class="text-slate-300">Hello, I'm Sanket Singhal 👋</span><br>
+                    <span class="gradient-text" id="typed-role"></span>
+                </h1>
+                <p class="text-slate-400 text-lg md:text-xl max-w-2xl mx-auto mb-8">
+                    A tech enthusiast specializing in Web Development and Data Science, focused on building professional and impactful solutions.
+                </p>
+                <a href="#projects" class="bg-sky-500 hover:bg-sky-600 text-white font-bold py-3 px-8 rounded-full text-lg transition duration-300 transform hover:scale-105">
+                    View My Work
+                </a>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="py-20 scroll-animation">
+            <h2 class="text-4xl font-bold text-center mb-12 gradient-text">About Me</h2>
+            <div class="flex flex-col md:flex-row items-center gap-12">
+                <div class="md:w-1/3">
+                    <!-- Replace with your actual photo URL -->
+                    <img src="https://placehold.co/400x400/0a0a0a/38bdf8?text=Sanket's\nPhoto" alt="Sanket Singhal" class="rounded-full shadow-lg mx-auto border-4 border-sky-500/30">
+                </div>
+                <div class="md:w-2/3 text-lg text-slate-400 space-y-4">
+                    <p>
+                        I am <b>Sanket Singhal</b>, a dedicated student pursuing a B.Tech in CSE (Data Science) at ABES Engineering College. My expertise lies in building dynamic web projects and exploring the fascinating realms of AI and Data Science.
+                    </p>
+                    <p>
+                        My journey into technology began with a simple "Hello World" and has since blossomed into a full-fledged passion for creating elegant digital solutions. I am committed to delivering professional, impactful, and user-friendly products.
+                    </p>
+                    <p>
+                       I am always eager to learn new technologies and frameworks to stay at the forefront of innovation and create intuitive digital experiences.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Education Section -->
+        <section id="education" class="py-20 scroll-animation">
+            <h2 class="text-4xl font-bold text-center mb-16 gradient-text">My Education</h2>
+            <div class="max-w-3xl mx-auto relative px-4">
+                <!-- Vertical line -->
+                <div class="absolute left-6 md:left-1/2 -translate-x-1/2 h-full w-0.5 bg-slate-700"></div>
+                
+                <!-- Timeline Item 1 -->
+                <div class="mb-8 flex md:justify-between items-center w-full flex-col md:flex-row">
+                     <div class="order-1 md:w-5/12"></div>
+                    <div class="z-20 flex items-center order-1 bg-sky-500 shadow-xl w-12 h-12 rounded-full absolute left-6 -translate-x-1/2 md:static">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mx-auto text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v11.494m-5.495-8.494l10.99 5.495M12 6.253L5.505 17.747" /></svg>
+                    </div>
+                    <div class="order-1 glass-effect rounded-lg shadow-xl w-full md:w-5/12 ml-10 md:ml-0 p-6">
+                        <h3 class="font-bold text-slate-100 text-xl">B.Tech CSE (Data Science)</h3>
+                        <p class="text-sm leading-snug tracking-wide text-slate-400">ABES Engineering College | 2023 – 2027</p>
+                    </div>
+                </div>
+
+                <!-- Timeline Item 2 -->
+                <div class="mb-8 flex md:justify-between flex-row-reverse items-center w-full flex-col md:flex-row">
+                    <div class="order-1 md:w-5/12"></div>
+                    <div class="z-20 flex items-center order-1 bg-sky-500 shadow-xl w-12 h-12 rounded-full absolute left-6 -translate-x-1/2 md:static">
+                         <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mx-auto text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6" /></svg>
+                    </div>
+                    <div class="order-1 glass-effect rounded-lg shadow-xl w-full md:w-5/12 ml-10 md:ml-0 p-6">
+                        <h3 class="font-bold text-slate-100 text-xl">Intermediate (PCM)</h3>
+                        <p class="text-sm leading-snug tracking-wide text-slate-400">XYZ School | 2021 – 2023</p>
+                    </div>
+                </div>
+                
+                <!-- Timeline Item 3 -->
+                <div class="mb-8 flex md:justify-between items-center w-full flex-col md:flex-row">
+                     <div class="order-1 md:w-5/12"></div>
+                    <div class="z-20 flex items-center order-1 bg-sky-500 shadow-xl w-12 h-12 rounded-full absolute left-6 -translate-x-1/2 md:static">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mx-auto text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path d="M12 14l9-5-9-5-9 5 9 5z" /><path d="M12 14l6.16-3.422A12.083 12.083 0 0121 12c0 6.627-5.373 12-12 12S-3 18.627-3 12a12.083 12.083 0 012.84-6.422L12 14z" /></svg>
+                    </div>
+                    <div class="order-1 glass-effect rounded-lg shadow-xl w-full md:w-5/12 ml-10 md:ml-0 p-6">
+                        <h3 class="font-bold text-slate-100 text-xl">High School</h3>
+                        <p class="text-sm leading-snug tracking-wide text-slate-400">ABC School | 2019 – 2021</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="py-20">
+            <h2 class="text-4xl font-bold text-center mb-16 gradient-text scroll-animation">My Projects & Achievements</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Project 1 -->
+                <div class="glass-effect rounded-xl overflow-hidden group transform hover:-translate-y-2 transition-all duration-300 scroll-animation">
+                    <img src="https://placehold.co/600x400/1e293b/e2e8f0?text=AI+Translator" alt="AI Translator" class="w-full h-56 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold mb-2 text-slate-100">AI-Powered Translator</h3>
+                        <p class="text-slate-400 mb-4">Developed during my IBM GenAI Internship, this app translates multiple languages using voice and text features.</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-sky-500/20 text-sky-300 text-xs font-semibold px-2.5 py-1 rounded-full">Python</span>
+                            <span class="bg-sky-500/20 text-sky-300 text-xs font-semibold px-2.5 py-1 rounded-full">AI/ML</span>
+                             <span class="bg-sky-500/20 text-sky-300 text-xs font-semibold px-2.5 py-1 rounded-full">IBM Cloud</span>
+                        </div>
+                        <a href="#" class="text-sky-400 hover:text-sky-300 font-medium inline-flex items-center">View Project <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg></a>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="glass-effect rounded-xl overflow-hidden group transform hover:-translate-y-2 transition-all duration-300 scroll-animation" style="transition-delay: 100ms;">
+                    <img src="https://placehold.co/600x400/1e293b/e2e8f0?text=Food+Donation+Site" alt="Food Donation Website" class="w-full h-56 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold mb-2 text-slate-100">Food Donation Website</h3>
+                        <p class="text-slate-400 mb-4">A full-stack web platform built to connect food donors with organizations in need. A key project in my portfolio.</p>
+                         <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-sky-500/20 text-sky-300 text-xs font-semibold px-2.5 py-1 rounded-full">HTML</span>
+                            <span class="bg-sky-500/20 text-sky-300 text-xs font-semibold px-2.5 py-1 rounded-full">CSS</span>
+                             <span class="bg-sky-500/20 text-sky-300 text-xs font-semibold px-2.5 py-1 rounded-full">JavaScript</span>
+                        </div>
+                        <a href="#" class="text-sky-400 hover:text-sky-300 font-medium inline-flex items-center">View Project <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg></a>
+                    </div>
+                </div>
+                
+                <!-- Project 3 -->
+                <div class="glass-effect rounded-xl overflow-hidden group transform hover:-translate-y-2 transition-all duration-300 scroll-animation" style="transition-delay: 200ms;">
+                    <img src="https://placehold.co/600x400/1e293b/e2e8f0?text=Event+Management" alt="Event Management Website" class="w-full h-56 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold mb-2 text-slate-100">Event Management Website</h3>
+                        <p class="text-slate-400 mb-4">A responsive and user-friendly website for browsing, registering for, and managing events.</p>
+                         <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-sky-500/20 text-sky-300 text-xs font-semibold px-2.5 py-1 rounded-full">HTML/CSS</span>
+                            <span class="bg-sky-500/20 text-sky-300 text-xs font-semibold px-2.5 py-1 rounded-full">JavaScript</span>
+                             <span class="bg-sky-500/20 text-sky-300 text-xs font-semibold px-2.5 py-1 rounded-full">PHP</span>
+                        </div>
+                        <a href="#" class="text-sky-400 hover:text-sky-300 font-medium inline-flex items-center">View Project <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg></a>
+                    </div>
+                </div>
+                
+                 <!-- Project 4 -->
+                <div class="glass-effect rounded-xl overflow-hidden group transform hover:-translate-y-2 transition-all duration-300 scroll-animation" style="transition-delay: 300ms;">
+                    <img src="https://placehold.co/600x400/1e293b/e2e8f0?text=Hackathons" alt="Hackathon Projects" class="w-full h-56 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold mb-2 text-slate-100">Hackathon Participation</h3>
+                        <p class="text-slate-400 mb-4">Collaborated in team competitions to build innovative tech solutions under tight deadlines, honing problem-solving skills.</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-sky-500/20 text-sky-300 text-xs font-semibold px-2.5 py-1 rounded-full">Teamwork</span>
+                            <span class="bg-sky-500/20 text-sky-300 text-xs font-semibold px-2.5 py-1 rounded-full">Problem-Solving</span>
+                             <span class="bg-sky-500/20 text-sky-300 text-xs font-semibold px-2.5 py-1 rounded-full">Agile</span>
+                        </div>
+                        <a href="#" class="text-sky-400 hover:text-sky-300 font-medium inline-flex items-center">Learn More <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg></a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills" class="py-20 scroll-animation">
+            <h2 class="text-4xl font-bold text-center mb-16 gradient-text">My Tech Stack</h2>
+            <div class="max-w-4xl mx-auto grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 gap-8 text-center">
+                <!-- Skill 1: HTML & CSS -->
+                <div class="flex flex-col items-center gap-2 transition-transform hover:scale-110">
+                    <svg class="h-16 w-16 text-slate-400" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24"><path d="M1.5,1h12l-2,10.5l-4,1.5l-4,-1.5L1.5,1z M17.5,1h-4l1.5,8h4.5L17.5,1z M17.5,10h-4.5l0.5,5.5l-2.5,1l-2.5,-1L8,10h9.5z"/></svg>
+                    <p class="mt-1 text-sm font-medium">HTML & CSS</p>
+                </div>
+                <!-- Skill 2: JavaScript -->
+                <div class="flex flex-col items-center gap-2 transition-transform hover:scale-110">
+                    <svg class="h-16 w-16 text-slate-400" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24"><path d="M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M11,16H9.5V11H8V9.5H12.5V11H11V16M16,16H14.5V9.5H16V16Z"/></svg>
+                    <p class="mt-1 text-sm font-medium">JavaScript</p>
+                </div>
+                <!-- Skill 3: Python -->
+                <div class="flex flex-col items-center gap-2 transition-transform hover:scale-110">
+                    <svg class="h-16 w-16 text-slate-400" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24"><path d="M16.5,9.5V12.5H14.25A2.25,2.25 0 0,0 12,14.75V19H9.5V16.5H12A2.25,2.25 0 0,0 14.25,14.25V9.5A2.25,2.25 0 0,0 12,7.25H7.5V5H10V7.25A2.25,2.25 0 0,0 12.25,9.5H16.5M19,12A7,7 0 0,1 12,19A7,7 0 0,1 5,12A7,7 0 0,1 12,5A7,7 0 0,1 19,12Z"/></svg>
+                    <p class="mt-1 text-sm font-medium">Python</p>
+                </div>
+                <!-- Skill 4: Data Science -->
+                <div class="flex flex-col items-center gap-2 transition-transform hover:scale-110">
+                    <svg class="h-16 w-16 text-slate-400" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24"><path d="M12,2C6.48,2 2,6.48 2,12C2,17.52 6.48,22 12,22C17.52,22 22,17.52 22,12C22,6.48 17.52,2 12,2M12,4A8,8 0 0,1 20,12A8,8 0 0,1 12,20A8,8 0 0,1 4,12A8,8 0 0,1 12,4M10,14H14V17H10V14M10,7H14V12H10V7Z"/></svg>
+                    <p class="mt-1 text-sm font-medium">Data Science</p>
+                </div>
+                 <!-- Skill 5: Java -->
+                <div class="flex flex-col items-center gap-2 transition-transform hover:scale-110">
+                    <svg class="h-16 w-16 text-slate-400" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24"><path d="M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M10,8H14V10H12V14H14V16H10V14H12V10H10V8Z"/></svg>
+                    <p class="mt-1 text-sm font-medium">Java</p>
+                </div>
+                 <!-- Skill 6: SQL -->
+                <div class="flex flex-col items-center gap-2 transition-transform hover:scale-110">
+                     <svg class="h-16 w-16 text-slate-400" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24"><path d="M12,2C6.48,2 2,6.48 2,12C2,17.52 6.48,22 12,22C17.52,22 22,17.52 22,12C22,6.48 17.52,2 12,2M12,12.5A2.5,2.5 0 0,1 9.5,10A2.5,2.5 0 0,1 12,7.5A2.5,2.5 0 0,1 14.5,10A2.5,2.5 0 0,1 12,12.5M12,13.5A3.5,3.5 0 0,1 15.5,17H8.5A3.5,3.5 0 0,1 12,13.5Z"/></svg>
+                    <p class="mt-1 text-sm font-medium">SQL</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="py-20 scroll-animation">
+            <h2 class="text-4xl font-bold text-center mb-4 gradient-text">Get In Touch</h2>
+            <p class="text-slate-400 text-lg text-center max-w-2xl mx-auto mb-12">
+                I'm currently open to new opportunities and collaborations. Feel free to reach out!
+            </p>
+            <div class="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+                <!-- Email -->
+                 <a href="mailto:sanketsinghal@example.com" class="glass-effect p-8 rounded-lg transition-transform hover:scale-105">
+                    <svg class="w-12 h-12 mx-auto mb-4 text-sky-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+                    <h3 class="text-xl font-bold text-slate-100">Email</h3>
+                    <p class="text-slate-400">sanketsinghal@example.com</p>
+                </a>
+                <!-- LinkedIn -->
+                 <a href="https://www.linkedin.com/in/sanket-singhal" target="_blank" class="glass-effect p-8 rounded-lg transition-transform hover:scale-105">
+                     <svg class="w-12 h-12 mx-auto mb-4 text-sky-400" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                    <h3 class="text-xl font-bold text-slate-100">LinkedIn</h3>
+                    <p class="text-slate-400">/in/sanket-singhal</p>
+                </a>
+                 <!-- GitHub -->
+                 <a href="https://github.com/" target="_blank" class="glass-effect p-8 rounded-lg transition-transform hover:scale-105">
+                    <svg class="w-12 h-12 mx-auto mb-4 text-sky-400" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                    <h3 class="text-xl font-bold text-slate-100">GitHub</h3>
+                    <p class="text-slate-400">/your-github</p>
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900/50">
+        <div class="container mx-auto px-6 py-8 text-center text-slate-400">
+            <p>&copy; 2025 Sanket Singhal. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Typed.js initialization
+        document.addEventListener('DOMContentLoaded', function() {
+            var options = {
+                strings: ['Aspiring Data Scientist', 'Web Developer', 'Tech Enthusiast'],
+                typeSpeed: 50,
+                backSpeed: 30,
+                backDelay: 1500,
+                loop: true
+            };
+            var typed = new Typed('#typed-role', options);
+        });
+
+        // Mobile Menu Toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Close mobile menu when a link is clicked
+        document.querySelectorAll('#mobile-menu a, nav a[href^="#"]').forEach(link => {
+            link.addEventListener('click', () => {
+                if(!mobileMenu.classList.contains('hidden')){
+                    mobileMenu.classList.add('hidden');
+                }
+            });
+        });
+
+
+        // Sticky Header on Scroll
+        const header = document.getElementById('header');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                header.classList.add('glass-effect', 'shadow-lg');
+            } else {
+                header.classList.remove('glass-effect', 'shadow-lg');
+            }
+        });
+
+        // Scroll Animations
+        const scrollElements = document.querySelectorAll('.scroll-animation');
+
+        const elementInView = (el, dividend = 1) => {
+            const elementTop = el.getBoundingClientRect().top;
+            return (
+                elementTop <= (window.innerHeight || document.documentElement.clientHeight) / dividend
+            );
+        };
+
+        const displayScrollElement = (element) => {
+            element.classList.add('animate');
+        };
+
+        const handleScrollAnimation = () => {
+            scrollElements.forEach((el) => {
+                if (elementInView(el, 1.25)) {
+                    displayScrollElement(el);
+                }
+            });
+        };
+
+        window.addEventListener('scroll', () => {
+            handleScrollAnimation();
+        });
+        
+        // Trigger animation for elements already in view on page load
+        handleScrollAnimation();
+
+    </script>
+</body>
+</html>
+
