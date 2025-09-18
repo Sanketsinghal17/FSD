@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minimal Light To-Do List</title>
+    <!-- Google Fonts: Poppins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        /* Animation for new tasks */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Animation for input error */
+        @keyframes shake {
+            0%, 100% { transform: translateX(0); }
+            25% { transform: translateX(-5px); }
+            75% { transform: translateX(5px); }
+        }
+
+        /* --- General Body & Layout --- */
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f8f9fa; /* Soft off-white */
+            color: #212529; /* Dark gray for text */
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            min-height: 100vh;
+        }
+
+        .container {
+            background-color: #ffffff; /* Pure white */
+            width: 100%;
+            max-width: 550px;
+            padding: 30px;
+            border-radius: 12px;
+            border: 1px solid #dee2e6; /* Light gray border */
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+        }
+
+        h1 {
+            text-align: center;
+            color: #343a40; /* Slightly darker gray for header */
+            margin-top: 0;
+            margin-bottom: 25px;
+            font-weight: 600;
+        }
+
+        /* --- Input Area --- */
+        .input-area {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 25px;
+        }
+
+        #newTaskInput {
+            flex-grow: 1;
+            padding: 12px 15px;
+            border: 2px solid #ced4da; /* Standard input border */
+            background-color: #f1f3f5; /* Light gray input background */
+            color: #212529;
+            border-radius: 8px;
+            font-size: 16px;
+            font-family: 'Poppins', sans-serif;
+            transition: border-color 0.3s, box-shadow 0.3s;
+        }
+        
+        #newTaskInput:focus {
+            outline: none;
+            border-color: #83c5be; /* Sage green focus */
+            box-shadow: 0 0 0 3px rgba(131, 197, 190, 0.25);
+            background-color: #fff;
+        }
+        
+        #newTaskInput.shake {
+            animation: shake 0.3s;
+        }
+
+        #addTaskBtn {
+            padding: 12px 25px;
+            border: none;
+            background-color: #52b788; /* Sage green */
+            color: #ffffff;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.2s;
+        }
+
+        #addTaskBtn:hover {
+            background-color: #40916c; /* Darker sage green */
+        }
+        #addTaskBtn:active {
+            transform: scale(0.98);
+        }
+
+        /* --- To-Do List & Items --- */
+        #todoList {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        li {
+            display: flex;
+            align-items: center;
+            padding: 15px 5px;
+            border-bottom: 1px solid #e9ecef; /* Light border for list items */
+            animation: fadeIn 0.5s ease;
+            transition: background-color 0.3s;
+        }
+
+        li:last-child {
+            border-bottom: none;
+        }
+        li:hover {
+            background-color: #f8f9fa; /* Off-white hover */
+        }
+
+        li label {
+            flex-grow: 1;
+            margin: 0 15px;
+            font-size: 16px;
+            transition: color 0.4s, text-decoration-color 0.4s;
+            cursor: pointer;
+        }
+
+        /* --- Checkbox & Completed Task Styling --- */
+        input[type="checkbox"] {
+            width: 20px;
+            height: 20px;
+            cursor: pointer;
+            accent-color: #52b788; /* Sage green */
+        }
+        
+        input[type="checkbox"]:checked + label {
+            color: #adb5bd; /* Lighter gray for completed */
+            text-decoration: line-through;
+            text-decoration-color: #e5383b; /* Light gray strikethrough -> Changed to soft red */
+            text-decoration-thickness: 2px;
+        }
+
+        /* --- Delete Button --- */
+        .delete-btn {
+            background: none;
+            border: none;
+            color: #6c757d; /* Medium gray */
+            cursor: pointer;
+            padding: 5px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        
+        .delete-btn svg {
+            width: 20px;
+            height: 20px;
+        }
+
+        .delete-btn:hover {
+            background-color: #e5383b; /* Soft red for delete */
+            color: #ffffff;
+        }
+        
+        /* --- Empty State Message --- */
+        #emptyState {
+            text-align: center;
+            padding: 20px;
+            color: #6c757d; /* Medium gray */
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>To-Do List ✨</h1>
+
+        <div class="input-area">
+            <input type="text" id="newTaskInput" placeholder="Add a new task..." aria-label="New task input">
+            <button id="addTaskBtn">Add</button>
+        </div>
+
+        <ul id="todoList">
+        </ul>
+        
+        <div id="emptyState">
+            <p>Your task list is empty. Add a task to get started!</p>
+        </div>
+    </div>
+
+    <script>
+        const addTaskBtn = document.getElementById('addTaskBtn');
+        const newTaskInput = document.getElementById('newTaskInput');
+        const todoList = document.getElementById('todoList');
+        const emptyState = document.getElementById('emptyState');
+
+        const trashIconSVG = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M17 6H22V8H20V21C20 21.5523 19.5523 22 19 22H5C4.44772 22 4 21.5523 4 21V8H2V6H7V3C7 2.44772 7.44772 2 8 2H16C16.5523 2 17 2.44772 17 3V6ZM18 8H6V20H18V8ZM9 11H11V17H9V11ZM13 11H15V17H13V11ZM9 4V6H15V4H9Z"></path></svg>`;
+
+        function updateEmptyState() {
+            if (todoList.children.length === 0) {
+                emptyState.style.display = 'block';
+            } else {
+                emptyState.style.display = 'none';
+            }
+        }
+
+        function addTask() {
+            const taskText = newTaskInput.value.trim();
+            if (taskText === "") {
+                newTaskInput.classList.add('shake');
+                setTimeout(() => {
+                    newTaskInput.classList.remove('shake');
+                }, 300);
+                return;
+            }
+
+            const listItem = document.createElement('li');
+            const checkbox = document.createElement('input');
+            checkbox.type = 'checkbox';
+            
+            const label = document.createElement('label');
+            label.textContent = taskText;
+
+            const deleteButton = document.createElement('button');
+            deleteButton.className = 'delete-btn';
+            deleteButton.innerHTML = trashIconSVG;
+
+            listItem.appendChild(checkbox);
+            listItem.appendChild(label);
+            listItem.appendChild(deleteButton);
+            todoList.appendChild(listItem);
+
+            newTaskInput.value = '';
+            newTaskInput.focus();
+            updateEmptyState();
+        }
+
+        addTaskBtn.addEventListener('click', addTask);
+        newTaskInput.addEventListener('keypress', event => {
+            if (event.key === 'Enter') addTask();
+        });
+
+        todoList.addEventListener('click', event => {
+            if (event.target.closest('.delete-btn')) {
+                const listItemToDelete = event.target.closest('li');
+                listItemToDelete.remove();
+                updateEmptyState();
+            }
+        });
+        
+        updateEmptyState();
+    </script>
+
+</body>
+</html>
+
+
