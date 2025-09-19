@@ -47,13 +47,13 @@
 
         h1 {
             text-align: center;
-            color: #343a40; /* Slightly darker gray for header */
+            color: #343a40; 
             margin-top: 0;
             margin-bottom: 25px;
             font-weight: 600;
         }
 
-        /* --- Input Area --- */
+        
         .input-area {
             display: flex;
             gap: 10px;
@@ -63,8 +63,8 @@
         #newTaskInput {
             flex-grow: 1;
             padding: 12px 15px;
-            border: 2px solid #ced4da; /* Standard input border */
-            background-color: #f1f3f5; /* Light gray input background */
+            border: 2px solid #ced4da; 
+            background-color: #f1f3f5; 
             color: #212529;
             border-radius: 8px;
             font-size: 16px;
@@ -74,7 +74,7 @@
         
         #newTaskInput:focus {
             outline: none;
-            border-color: #83c5be; /* Sage green focus */
+            border-color: #83c5be;
             box-shadow: 0 0 0 3px rgba(131, 197, 190, 0.25);
             background-color: #fff;
         }
@@ -86,7 +86,7 @@
         #addTaskBtn {
             padding: 12px 25px;
             border: none;
-            background-color: #52b788; /* Sage green */
+            background-color: #52b788; 
             color: #ffffff;
             border-radius: 8px;
             font-size: 16px;
@@ -96,13 +96,13 @@
         }
 
         #addTaskBtn:hover {
-            background-color: #40916c; /* Darker sage green */
+            background-color: #40916c; 
         }
         #addTaskBtn:active {
             transform: scale(0.98);
         }
 
-        /* --- To-Do List & Items --- */
+        
         #todoList {
             list-style-type: none;
             padding: 0;
@@ -113,7 +113,7 @@
             display: flex;
             align-items: center;
             padding: 15px 5px;
-            border-bottom: 1px solid #e9ecef; /* Light border for list items */
+            border-bottom: 1px solid #e9ecef; 
             animation: fadeIn 0.5s ease;
             transition: background-color 0.3s;
         }
@@ -122,7 +122,7 @@
             border-bottom: none;
         }
         li:hover {
-            background-color: #f8f9fa; /* Off-white hover */
+            background-color: #f8f9fa;
         }
 
         li label {
@@ -133,26 +133,26 @@
             cursor: pointer;
         }
 
-        /* --- Checkbox & Completed Task Styling --- */
+       
         input[type="checkbox"] {
             width: 20px;
             height: 20px;
             cursor: pointer;
-            accent-color: #52b788; /* Sage green */
+            accent-color: #52b788;
         }
         
         input[type="checkbox"]:checked + label {
-            color: #adb5bd; /* Lighter gray for completed */
+            color: #adb5bd; 
             text-decoration: line-through;
-            text-decoration-color: #e5383b; /* Light gray strikethrough -> Changed to soft red */
+            text-decoration-color: #e5383b; 
             text-decoration-thickness: 2px;
         }
 
-        /* --- Delete Button --- */
+       
         .delete-btn {
             background: none;
             border: none;
-            color: #6c757d; /* Medium gray */
+            color: #6c757d; 
             cursor: pointer;
             padding: 5px;
             border-radius: 50%;
@@ -168,15 +168,15 @@
         }
 
         .delete-btn:hover {
-            background-color: #e5383b; /* Soft red for delete */
+            background-color: #e5383b; 
             color: #ffffff;
         }
         
-        /* --- Empty State Message --- */
+      
         #emptyState {
             text-align: center;
             padding: 20px;
-            color: #6c757d; /* Medium gray */
+            color: #6c757d; 
             font-size: 16px;
         }
     </style>
@@ -264,5 +264,3 @@
 
 </body>
 </html>
-
-
