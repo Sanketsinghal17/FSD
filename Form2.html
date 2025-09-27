@@ -83,13 +83,12 @@
                 resultsContent.innerHTML = `<p style="color: red;">Please enter valid marks between 0 and 100.</p>`;
                 return;
             }
-
             
             students.push({ name, marks });
 
             studentNameInput.value = '';
             studentMarksInput.value = '';
-            studentNameInput.focus();
+            studentNameInput.focus(); 
 
             
             renderStudents(students, 'All Students');
