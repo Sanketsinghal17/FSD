@@ -1,0 +1,160 @@
+body {
+  margin: 0;
+  background-color: #000000;
+  color: #ffffff;
+  font-family: sans-serif;
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Header: Logo far left, Title centered, spacer for balance */
+.app-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 24px 0 12px 0;
+  width: 100vw;
+  box-sizing: border-box;
+  position: relative;
+}
+
+.logo {
+  height: 3em;
+  filter: drop-shadow(0 0 0.5em #61dafbaa);
+  margin-left: 24px;
+}
+
+.header-spacer {
+  width: 3em; /* Matches logo width, balances centering visually */
+}
+
+.app-header h1 {
+  flex: 1;
+  text-align: center;
+  margin: 0;
+  font-size: 2.5rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+/* Main Content: centered row of 2 columns */
+.main-content {
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  min-height: 60vh;
+  gap: 8vw;
+}
+
+/* Vertical line on right of topics/left-column */
+.left-column {
+  flex: 1;
+  max-width: 340px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 32px 16px;
+  box-sizing: border-box;
+  border-right: 2px solid #333;      /* Vertical line */
+}
+
+.right-column {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Counter circle styling */
+.counter-circle {
+  border: 2px dashed #bbb;
+  border-radius: 50%;
+  width: 200px;
+  height: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  gap: 16px;
+  background: rgba(30,30,30,0.18);
+}
+
+.counter-circle p {
+  font-size: 1.1rem;
+  margin-bottom: 0.4em;
+}
+
+.counter-circle button {
+  background-color: #333;
+  border: 1px solid #555;
+  padding: 0.6em 1.2em;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: border-color 0.25s;
+  color: #fff;
+  font-size: 1.1rem;
+}
+
+.counter-circle button:hover {
+  border-color: #61dafbaa;
+}
+
+/* Footer bar (horizontal line above chapter section) */
+.app-footer {
+  width: 100vw;
+  display: flex;
+  justify-content: flex-start;
+  padding: 20px 32px;
+  border-top: 1px solid #333;        /* Horizontal line */
+  box-sizing: border-box;
+}
+
+.chapters-section {
+  flex: 1;
+}
+
+/* Spacing between each chapter in the list */
+.chapters-section ol {
+  list-style-position: inside;
+  padding: 0;
+}
+
+.chapters-section ol li {
+  margin-bottom: 18px;               /* Spacing between chapter items */
+}
+
+/* General text styles */
+h1, h2, p, li, button {
+  color: #ffffff;
+}
+
+h2 {
+  margin-top: 0;
+}
+
+/* Responsive: mobile screens */
+@media (max-width: 900px) {
+  .main-content {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 0 10vw;
+    gap: 32px;
+  }
+  .left-column, .right-column {
+    max-width: 100%;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    padding: 18px 0;
+    border-right: none; /* Remove vertical line on small screens */
+  }
+}
