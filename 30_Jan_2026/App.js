@@ -22,3 +22,15 @@ fs.readFile("data.txt","utf8",(err,data)=>{
         console.log("data is ",data);
     }
 })
+
+// append a file using fs module
+
+// fs.appendFile("data.txt","I am Sanket",(err,data)=>{
+//     if(err){
+//         console.log("Error in append data",err);
+//     }
+//     else{
+//         console.log("Append done in file");
+//     }
+
+// })
