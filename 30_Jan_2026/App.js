@@ -44,3 +44,13 @@ fs.unlink("data.txt",(err)=>{
         console.log("file deleted");
     }
 })
+
+// to rename a file
+// fs.rename("data.txt","newdata.txt",(err)=>{
+//     if(err){
+//         console.log("Error in rename file ",err);
+//     }
+//     else{
+//         console.log("renamed file successfully..");
+//     }
+// })
