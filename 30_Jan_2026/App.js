@@ -14,14 +14,14 @@ const fs=require("fs");
 
 // read a file using fs module
 
-fs.readFile("data.txt","utf8",(err,data)=>{
-    if(err){
-        console.log("Error in reading a file",err);
-    }
-    else{
-        console.log("data is ",data);
-    }
-})
+// fs.readFile("data.txt","utf8",(err,data)=>{
+//     if(err){
+//         console.log("Error in reading a file",err);
+//     }
+//     else{
+//         console.log("data is ",data);
+//     }
+// })
 
 // append a file using fs module
 
@@ -34,3 +34,13 @@ fs.readFile("data.txt","utf8",(err,data)=>{
 //     }
 
 // })
+
+// to delete a file 
+fs.unlink("data.txt",(err)=>{
+    if(err){
+        console.log("Error in deleting file",err);
+    }
+    else{
+        console.log("file deleted");
+    }
+})
