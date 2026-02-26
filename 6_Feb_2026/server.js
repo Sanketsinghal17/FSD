@@ -15,7 +15,7 @@ const server = http.createServer((req, res) => {
             }
         });
     }
-
+    
     else if (req.url === "/style.css") {
         fs.readFile("style.css", (err, data) => {
             if (err) {
